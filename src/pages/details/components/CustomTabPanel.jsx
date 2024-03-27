@@ -4,13 +4,7 @@ export function CustomTabPanel(props) {
   const { children, value, index, style, ...other } = props;
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
+    <div hidden={value !== index} {...other}>
       {value === index && <Box sx={{ p: 3, ...style }}>{children}</Box>}
     </div>
   );

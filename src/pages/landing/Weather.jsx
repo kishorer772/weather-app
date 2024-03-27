@@ -1,9 +1,9 @@
-import { Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { useMediaQuery } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import dayjs from 'dayjs';
+import WeatherInputForm from './components/WeatherInputForm';
 
 const Weather = () => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ const Weather = () => {
     setCityName(e.target.value);
   };
   function renderWeatherWithCityName(cityName, oneWeek, today) {
+    // calling Weather Energy API
     fetch(
       `https://api.weatherbit.io/v2.0/history/energy?key=${process.env.REACT_APP_API_KEY}&city=${cityName}&start_date=${oneWeek}&end_date=${today}&tp=daily`
     )
@@ -54,36 +55,11 @@ const Weather = () => {
           </Typography>
         )}
       </div>
-      <form onSubmit={handleSubmit}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            minWidth: '320px',
-            margin: '0 auto',
-            maxWidth: '600px',
-            paddingBottom: '2rem',
-            gap: '1rem',
-          }}
-        >
-          <TextField
-            placeholder="Enter the City"
-            style={{ padding: '1rem' }}
-            onChange={handleChange}
-            value={cityName}
-            required
-          />
-          <Button
-            style={{ maxWidth: '10rem', margin: '0 auto' }}
-            variant="contained"
-            centerRipple
-            type="submit"
-          >
-            Get Weather
-          </Button>
-        </div>
-      </form>
+      <WeatherInputForm
+        cityName={cityName}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };

@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-import {
-  Button,
-  Chip,
-  Tab,
-  Tabs,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Button, Tab, Tabs, Typography, useMediaQuery } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaLocationDot, FaMapLocationDot } from 'react-icons/fa6';
-import dayjs from 'dayjs';
 import CityName from './components/CityName';
-import RenderWeatherInfo from './components/RenderWeatherInfo';
 import { CustomTabPanel } from './components/CustomTabPanel';
-import { setIcon, weekdays } from './utils/details-page';
 import FixedButton from './components/FixedButton';
 import WeatherContainer from './components/WeatherContainer';
 

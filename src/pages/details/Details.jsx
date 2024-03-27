@@ -62,18 +62,16 @@ const Details = () => {
     <div style={{ paddingBlock: '3rem' }}>
       <div
         style={{
-          // marginBlock: '4rem',
           backgroundColor: 'orange',
           width: '80%',
           marginInline: 'auto',
-          minHeight: 'calc(100% - 300px)',
+          // minHeight: 'calc(100% - 300px)',
           height: 'calc(100vh - 5rem)',
-          maxHeight: '75vh',
+          maxHeight: '80vh',
           padding: isMobile ? '1rem' : '0.5rem',
           backgroundImage: ` linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(
             https://imgs.search.brave.com/2S-q0hD6gJvvlAGc6BMQpdoJlo2VD_K0UUdZdYodICc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2l0eXllYXIub3Jn/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE5/LzEwL0thbnNhc0Np/dHktQ2l0eS1lbGxp/b3RoYW5leS00LW9m/LTRlbGxpb3RoYW5l/eTE0NDAuanBn
           )`,
-
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           display: 'flex',
@@ -144,7 +142,8 @@ const Details = () => {
               height: isMobile ? '150px' : '120px',
               overflowY: isMobile ? 'scroll' : 'hidden',
               padding: '1rem',
-              background: 'none',
+              // background: 'none',
+              // backgroundColor: 'beige',
             }}
           >
             {state.data.data.map((day, index) => (
@@ -285,6 +284,10 @@ function CustomTabPanel(props) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+      style={{
+        backgroundColor: style.backgroundColor || 'none',
+        width: '100%',
+      }}
     >
       {value === index && <Box sx={{ p: 3, ...style }}>{children}</Box>}
     </div>

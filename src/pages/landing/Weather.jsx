@@ -4,29 +4,31 @@ import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import dayjs from 'dayjs';
+
 const Weather = () => {
   const navigate = useNavigate();
   const [cityName, setCityName] = useState('');
   const today = dayjs().format('YYYY-MM-DD');
   const oneWeek = dayjs().subtract(7, 'days').format('YYYY-MM-DD');
-
   const handleChange = (e) => {
     setCityName(e.target.value);
   };
+  function renderWeatherWithCityName(cityName, oneWeek, today) {
+    fetch(
+      `https://api.weatherbit.io/v2.0/history/energy?key=${process.env.REACT_APP_API_KEY}&city=${cityName}&start_date=${oneWeek}&end_date=${today}&tp=daily`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setCityName('');
+        navigate('/details', { state: { data: data } });
+      })
+      .catch((error) => console.error(error));
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (cityName === '') return;
-    alert(cityName);
-
-    fetch(
-      `https://api.weatherbit.io/v2.0/history/energy?key=8ff6b1c427824112b02b9f92f1485bbb&city=${cityName}&start_date=${oneWeek}&end_date=${today}`
-    )
-      .then((response) => response.json())
-      .then((data) => navigate('/details', { state: { data: data } }))
-      .catch((error) => console.error(error));
-
-    setCityName('');
+    renderWeatherWithCityName(cityName, oneWeek, today);
   };
 
   const theme = useTheme();

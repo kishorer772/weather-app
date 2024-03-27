@@ -11,7 +11,25 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.details-container {
+  width: '80%';
+  margin-inline: 'auto';
+  height: 'calc(100vh - 5rem)';
+  max-height: '80vh';
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(https://imgs.search.brave.com/2S-q0hD6gJvvlAGc6BMQpdoJlo2VD_K0UUdZdYodICc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2l0eXllYXIub3Jn/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE5/LzEwL0thbnNhc0Np/dHktQ2l0eS1lbGxp/b3RoYW5leS00LW9m/LTRlbGxpb3RoYW5l/eTE0NDAuanBn);
+  background-size: 'cover';
+  background-repeat: 'no-repeat';
+  display: 'flex';
+  flex-direction: 'column';
+  justify-content: 'space-between';
+  border-radius: 16;
+  box-sizing: 'content-box';
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

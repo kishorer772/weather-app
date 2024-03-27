@@ -1,4 +1,5 @@
 import './App.css';
+import ErrorBoundary from './ErrorBoundary';
 import Details from './pages/details/Details';
 import Weather from './pages/landing/Weather';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -13,7 +14,11 @@ function App() {
       element: <Details />,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <ErrorBoundary>
+      <RouterProvider router={router} />
+    </ErrorBoundary>
+  );
 }
 
 export default App;

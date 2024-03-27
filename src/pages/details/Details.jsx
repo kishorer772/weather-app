@@ -9,14 +9,10 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import React, { useEffect } from 'react';
-import {
-  FaLocationDot,
-  FaMapLocation,
-  FaMapLocationDot,
-} from 'react-icons/fa6';
+import { FaLocationDot, FaMapLocationDot } from 'react-icons/fa6';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaCloudShowersHeavy } from 'react-icons/fa6';
-import energy from '../../assets/data/energy.json';
+// import energy from '../../assets/data/energy.json';
 import { FaRegSnowflake } from 'react-icons/fa';
 import dayjs from 'dayjs';
 const weekdays = [
@@ -29,10 +25,10 @@ const weekdays = [
   'Saturday',
 ];
 const Details = () => {
-  console.log(energy.data[0]);
   const theme = useTheme();
   const { state } = useLocation();
-  console.log('Details ~ state:', state);
+
+  console.log(state.data);
   const navigate = useNavigate();
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -90,18 +86,18 @@ const Details = () => {
         <div
           style={{
             display: 'flex',
-            paddingInline: isMobile ? '1rem' : '3rem',
+            paddingInline: isMobile ? '1rem' : '1rem',
             paddingBlock: isMobile ? '1rem' : '2rem',
           }}
         >
           <div style={{ flex: isMobile ? 8 : 5 }}>
             {isMobile ? (
               <Typography variant="h5" color={'white'}>
-                {state?.name}
+                {state?.data.city_name}
               </Typography>
             ) : (
               <Typography variant="h3" color={'white'}>
-                {state?.name}
+                {state?.data.city_name}
               </Typography>
             )}
           </div>
@@ -122,11 +118,11 @@ const Details = () => {
             />
             {isMobile ? (
               <Typography variant="h6" color={'white'}>
-                {state?.timezone || 'Timezone'}
+                {state?.data.timezone || 'Timezone'}
               </Typography>
             ) : (
-              <Typography variant="h4" color={'white'}>
-                {state?.timezone || 'Timezone'}
+              <Typography variant="h6" color={'white'}>
+                {state?.data.timezone || 'Timezone'}
               </Typography>
             )}
           </div>
@@ -151,8 +147,9 @@ const Details = () => {
               background: 'none',
             }}
           >
-            {energy.data.map((day, index) => (
+            {state.data.data.map((day, index) => (
               <div
+                key={index}
                 style={{
                   width:
                     index === 0

@@ -13,12 +13,7 @@ function App() {
       element: <Details />,
     },
   ]);
-  return (
-    <div className="App" style={{ flex: 1, height: '100vh' }}>
-      {' '}
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

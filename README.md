@@ -1,19 +1,19 @@
 Weather App Project Docs
 
-## Stack Used : React MUI React Router
+# Stack Used : React MUI React Router
 
-## Dashboard (/)
+# Dashboard (/)
 Weather.jsx  is Main Landing Page
 
-## Details Page (/details)
+# Details Page (/details)
 WeatherDetails.jsx
 
 ## Things I did in this project
 
-## Developing Pure Components
-## Using Conditional and Presentational Pattern
-## Modular code and Code Splitting 
-## for every page created Components and utils folder for better Re Usage and Readablity
+# Developing Pure Components
+# Using Conditional and Presentational Pattern
+# Modular code and Code Splitting 
+# for every page created Components and utils folder for better Re Usage and Readablity
 
 
 

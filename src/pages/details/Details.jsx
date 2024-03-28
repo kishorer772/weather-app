@@ -22,7 +22,7 @@ const Details = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (state === null) navigate('/');
   }, []);

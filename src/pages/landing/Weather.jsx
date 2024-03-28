@@ -59,6 +59,16 @@ const Weather = () => {
         cityName={cityName}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          minWidth: '320px',
+          margin: '0 auto',
+          maxWidth: '600px',
+          paddingBottom: '2rem',
+          gap: '1rem',
+        }}
       />
     </div>
   );

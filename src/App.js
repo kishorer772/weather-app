@@ -1,8 +1,8 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './ErrorBoundary';
-import Details from './pages/details/Details';
+import WeatherDetails from './pages/details/WeatherDetails';
 import Weather from './pages/landing/Weather';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 function App() {
   const router = createBrowserRouter([
     {
@@ -11,7 +11,7 @@ function App() {
     },
     {
       path: '/details',
-      element: <Details />,
+      element: <WeatherDetails />,
     },
   ]);
   return (

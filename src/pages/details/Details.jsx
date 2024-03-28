@@ -7,7 +7,7 @@ import CityName from './components/CityName';
 import { CustomTabPanel } from './components/CustomTabPanel';
 import FixedButton from './components/FixedButton';
 import WeatherContainer from './components/WeatherContainer';
-
+import '../../weather.css';
 const Details = () => {
   const theme = useTheme();
   const { state } = useLocation();
@@ -53,8 +53,8 @@ const Details = () => {
               isMobile={isMobile}
               state={state}
               mobileHeading={'h6'}
-              screenHeading={'h6'}
-              title={'timezone'}
+              screenHeading={'h4'}
+              title={'city_name'}
             />
           </div>
           <div

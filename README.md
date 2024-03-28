@@ -15,5 +15,9 @@ WeatherDetails.jsx
 ### Modular code and Code Splitting 
 ### for every page created Components and utils folder for better Re Usage and Readablity
 
+# Note
+### Add .env file with key REACT_APP_API_KEY and add your weather.io api key to run
+
+Demo url: https://weather-app-mui.netlify.app/
 
 

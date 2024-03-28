@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 const WeatherContainer = ({ state, isMobile }) => {
   return (
     <>
-      {state.data?.data.map((day, index) => (
+      {state?.data?.data.map((day, index) => (
         <div
           key={index}
           style={{

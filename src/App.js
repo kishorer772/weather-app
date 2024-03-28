@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import ErrorBoundary from './ErrorBoundary';
+
 import WeatherDetails from './pages/details/WeatherDetails';
 import Weather from './pages/landing/Weather';
+import { ErrorBoundary } from 'react-error-boundary';
 function App() {
   const router = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ function App() {
     },
   ]);
   return (
-    <ErrorBoundary>
+    <ErrorBoundary fallback={<p>Something went wrong</p>}>
       <RouterProvider router={router} />
     </ErrorBoundary>
   );

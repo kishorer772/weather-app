@@ -8,6 +8,7 @@ import { CustomTabPanel } from './components/CustomTabPanel';
 import FixedButton from './components/FixedButton';
 import WeatherContainer from './components/WeatherContainer';
 import '../../weather.css';
+
 const Details = () => {
   const theme = useTheme();
   const { state } = useLocation();
@@ -83,9 +84,24 @@ const Details = () => {
         <div>
           <nav>
             <Tabs value={value} onChange={handleChange} textColor="secondary">
-              <Tab label="Weather" color="white" style={{ color: 'white' }} />
-              <Tab label="News" color="white" style={{ color: 'white' }} />
-              <Tab label="Gallery" color="white" style={{ color: 'white' }} />
+              <Tab
+                label="Weather"
+                color="white"
+                style={{ color: 'white' }}
+                sx={{ fontWeight: '600' }}
+              />
+              <Tab
+                label="News"
+                color="white"
+                style={{ color: 'white' }}
+                sx={{ fontWeight: '600' }}
+              />
+              <Tab
+                label="Gallery"
+                color="white"
+                style={{ color: 'white' }}
+                sx={{ fontWeight: '600' }}
+              />
             </Tabs>
           </nav>
           <CustomTabPanel
